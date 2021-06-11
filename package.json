@@ -20,7 +20,7 @@
     "prompts": "^2.4.1"
   },
   "devDependencies": {
-    "@kaaaxcreators/config": "^1.1.0",
+    "@kaaaxcreators/config": "^1.1.1",
     "@types/dotenv-safe": "^8.1.1",
     "@types/node": "^15.12.2",
     "@types/prompts": "^2.0.13",
