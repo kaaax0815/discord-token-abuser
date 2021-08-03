@@ -24,7 +24,7 @@
     "@types/dotenv-safe": "^8.1.2",
     "@types/node": "^16.4.10",
     "@types/prompts": "^2.0.14",
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.28.5",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
