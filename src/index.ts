@@ -5,7 +5,9 @@ import fs from 'fs';
 import prompt from './utils/prompt';
 dotenv.config();
 
-const client = new Client();
+const client = new Client({
+  intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_INVITES', 'GUILD_BANS']
+});
 export const config = {
   OWNER: process.env.YOU!
 };
@@ -23,7 +25,7 @@ client.on('ready', async () => {
 
   // Get All TextChannels
   const channels = selectedserver.channels.cache
-    .filter((channel) => channel.type == 'text')
+    .filter((channel) => channel.type == 'GUILD_TEXT')
     .map((channel) => ({
       title: channel.name,
       value: channel

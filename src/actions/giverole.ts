@@ -10,7 +10,7 @@ module.exports = {
     input: ['Role']
   },
   run: async function (client: Client, server: Guild) {
-    if (!server.me?.hasPermission('MANAGE_ROLES')) {
+    if (!server.me?.permissions.has('MANAGE_ROLES')) {
       console.clear();
       return console.log("Don't have permissions to manage roles");
     }
@@ -23,7 +23,8 @@ module.exports = {
     if (you.roles.cache.has(selectedrole.id)) return console.log('You already have that role');
     try {
       await you.roles.add(selectedrole);
-    } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
       return console.log(err.message ? err.message : err);
     }
   }

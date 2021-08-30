@@ -25,7 +25,9 @@ module.exports = {
       },
       color: 'RANDOM'
     });
-    await channel.send(message).then(async () => await loop(channel, iterations, message));
+    await channel
+      .send({ embeds: [message] })
+      .then(async () => await loop(channel, iterations, message));
   }
 };
 
@@ -33,5 +35,7 @@ async function loop(channel: TextChannel, iterations: number, message: MessageEm
   i++;
   if (i - 1 == iterations) return;
   message.setColor('RANDOM');
-  await channel.send(message).then(async () => await loop(channel, iterations, message));
+  await channel
+    .send({ embeds: [message] })
+    .then(async () => await loop(channel, iterations, message));
 }

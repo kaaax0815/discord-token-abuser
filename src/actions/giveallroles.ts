@@ -9,7 +9,10 @@ module.exports = {
     input: []
   },
   run: async function (client: Client, server: Guild) {
-    if (!server.me?.hasPermission('MANAGE_ROLES') || !server.me?.hasPermission('ADMINISTRATOR')) {
+    if (
+      !server.me?.permissions.has('MANAGE_ROLES') ||
+      !server.me?.permissions.has('ADMINISTRATOR')
+    ) {
       console.clear();
       return console.log("Don't have permissions to manage roles");
     }
@@ -22,7 +25,8 @@ module.exports = {
       if (you.roles.cache.has(role.value.id)) continue;
       try {
         await you.roles.add(role.value);
-      } catch (err) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (err: any) {
         console.log(err.message ? err.message + `: at ${role.title}` : err);
       }
     }
