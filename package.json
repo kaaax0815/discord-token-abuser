@@ -22,7 +22,7 @@
   "devDependencies": {
     "@kaaaxcreators/config": "^1.1.2",
     "@types/dotenv-safe": "^8.1.2",
-    "@types/node": "^16.7.8",
+    "@types/node": "^16.7.10",
     "@types/prompts": "^2.0.14",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
